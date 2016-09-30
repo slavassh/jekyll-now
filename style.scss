@@ -27,8 +27,8 @@ body {
 
 .container {
   margin: 0 auto;
-  max-width: 740px;
-  padding: 0 10px;
+  max-width: 1200px;
+  padding: 0 40px;
   width: 100%;
 }
 
@@ -271,6 +271,11 @@ nav {
     text-transform: uppercase;
     font-size: 15px;
   }
+}
+
+.preview-title {
+  font-size: 20px;
+  font-weight: normal;
 }
 
 .wrapper-footer {
