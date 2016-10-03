@@ -72,8 +72,8 @@ kramdown:
     css_class: 'highlight'
 
 # Set the Sass partials directory, as we're using @imports
-sass:
-  style: :expanded # You might prefer to minify using :compressed
+# sass:
+#   style: :expanded # You might prefer to minify using :compressed
 
 # Use the following plug-ins
 gems:
@@ -87,3 +87,6 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+  - node_modules
+  - gulpfile.js
+  - package.json

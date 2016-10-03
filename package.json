@@ -1,0 +1,35 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "My Works",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^6.5.0",
+    "browser-sync": "^2.17.0",
+    "child_process": "^1.0.2",
+    "gulp": "^3.9.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.2.0",
+    "gulp-sass": "^2.3.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slavassh/slavassh.github.io.git"
+  },
+  "keywords": [
+    "jekyll",
+    "gulp",
+    "sass",
+    "browsersync"
+  ],
+  "author": "Viacheslav Shestakov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/slavassh/slavassh.github.io/issues"
+  },
+  "homepage": "https://github.com/slavassh/slavassh.github.io#readme"
+}
