@@ -2,7 +2,9 @@ var gulp        = require('gulp');
 var plumber     = require('gulp-plumber');
 var browserSync = require('browser-sync');
 var sass        = require('gulp-sass');
+var syntax      = require('postcss-scss');
 var postcss     = require('gulp-postcss');
+var sorting     = require('postcss-sorting');
 var prefix      = require('autoprefixer');
 var cp          = require('child_process');
 
@@ -44,6 +46,11 @@ gulp.task('browser-sync', ['style', 'jekyll-build'], function() {
 gulp.task('style', function () {
     return gulp.src('_scss/style.scss')
         .pipe(plumber())
+        .pipe(postcss([sorting(
+            { 	"sort-order": "alphabetical",
+                "empty-lines-between-children-rules": 1,
+                "empty-lines-between-media-rules": 1 }
+            )], {syntax: syntax}))
         .pipe(sass({
             includePaths: ['_scss'],
             onError: browserSync.notify
@@ -62,12 +69,23 @@ gulp.task('style', function () {
         .pipe(gulp.dest('css'));
 });
 
+gulp.task('sort', function () {
+    return gulp.src('_scss')
+        .pipe(plumber())
+        .pipe(postcss([sorting(
+            { 	"sort-order": "alphabetical",
+                "empty-lines-between-children-rules": 1,
+                "empty-lines-between-media-rules": 1 }
+        )], {syntax: syntax}))
+        .pipe(gulp.dest('_scss'));
+});
+
 /**
  * Watch scss files for changes & recompile
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
-    gulp.watch('_scss/*.scss', ['style']);
+    gulp.watch('_scss/*.scss', ['sort','style']);
     gulp.watch(['*.html', '_layouts/*.html', '_posts/*'], ['jekyll-rebuild']);
 });
 
