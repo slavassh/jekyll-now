@@ -71,7 +71,6 @@ gulp.task('style', function () {
 
 gulp.task('sort', function () {
     return gulp.src('_scss')
-        .pipe(plumber())
         .pipe(postcss([sorting(
             { 	"sort-order": "alphabetical",
                 "empty-lines-between-children-rules": 1,
