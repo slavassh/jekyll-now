@@ -69,22 +69,12 @@ gulp.task('style', function () {
         .pipe(gulp.dest('css'));
 });
 
-gulp.task('sort', function () {
-    return gulp.src('_scss')
-        .pipe(postcss([sorting(
-            { 	"sort-order": "alphabetical",
-                "empty-lines-between-children-rules": 1,
-                "empty-lines-between-media-rules": 1 }
-        )], {syntax: syntax}))
-        .pipe(gulp.dest('_scss'));
-});
-
 /**
  * Watch scss files for changes & recompile
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
-    gulp.watch('_scss/*.scss', ['sort','style']);
+    gulp.watch('_scss/*.scss', ['style']);
     gulp.watch(['*.html', '_layouts/*.html', '_posts/*'], ['jekyll-rebuild']);
 });
 
