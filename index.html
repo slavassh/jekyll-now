@@ -6,8 +6,6 @@ layout: default
   {% for post in site.posts %}
     <article class="post">
 
-      
-
       {% if post.preview %}
       	<a href="{{ site.baseurl }}{{ post.url }}">
           <img src="images/previews/{{ post.preview }}" alt="{{ post.title }}">
@@ -15,8 +13,19 @@ layout: default
       {% endif %}
 
       <h2 class="preview-title"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+      <p class="description">{{ post.work-description }}</p>
 
-<!--       <div class="entry">
+      <ul class="tags">
+        {% for tag in post.tags %}
+          <li class="tag">{{ tag }}</li>
+        {% endfor %}
+      </ul>
+
+      {% if post.preview %}
+        <a href="http://{{ post.live-url }}" target="_blank" class="live-url">{{ post.live-url }}</p>
+      {% endif %}
+      
+      <!-- <div class="entry">
         {{ post.excerpt }}
       </div>
 
