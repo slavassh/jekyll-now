@@ -7,7 +7,7 @@ layout: default
     <article class="post">
 
       {% if post.preview %}
-      	<a href="{{ site.baseurl }}{{ post.url }}">
+        <a href="{{ site.baseurl }}{{ post.url }}">
           <img src="images/previews/{{ post.preview }}" alt="{{ post.title }}">
         </a>
       {% endif %}
@@ -22,9 +22,9 @@ layout: default
       </ul>
 
       {% if post.preview %}
-        <a href="http://{{ post.live-url }}" target="_blank" class="live-url">{{ post.live-url }}</p>
+        <a href="http://{{ post.live-url }}" target="_blank" class="live-url">{{ post.live-url }}</a>
       {% endif %}
-      
+
       <!-- <div class="entry">
         {{ post.excerpt }}
       </div>
