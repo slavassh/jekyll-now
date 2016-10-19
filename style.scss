@@ -87,6 +87,21 @@ ul {
   list-style-type: disc;
 }
 
+ul.tags {
+  padding-left: 0;
+  list-style: none;
+}
+
+li.tag {
+  display: inline-block;
+  margin-right: 2px;
+  margin-bottom: 3px;
+  padding: 2px 8px;
+  background-color: $lightgray;
+  color: $gray;  
+  font-size: 13px;
+}
+
 ol {
   list-style-type: decimal;
 }
@@ -225,9 +240,15 @@ nav {
 // .main
 //
 
+.posts {
+  display: flex;
+
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .posts > .post {
-  padding-bottom: 2em;
-  border-bottom: 1px solid $lightgray;
+  padding-bottom: 3em;  
 }
 
 .posts > .post:last-child {
@@ -236,6 +257,8 @@ nav {
 }
 
 .post {
+  width: 31%;
+
   blockquote {
     margin: 1.8em .8em;
     padding: 0.1em 1em;
@@ -256,8 +279,19 @@ nav {
 }
 
 .preview-title {
+  margin-bottom: .5em;
   font-weight: normal;
-  font-size: 20px;
+  font-size: 21px;
+  line-height: 1.3em;
+}
+
+.description {
+  margin: 0 0 1em;
+  font-size: 16px;
+}
+
+.live-url {
+  font-size: 16px;
 }
 
 .wrapper-footer {
