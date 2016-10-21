@@ -259,6 +259,13 @@ nav {
 .post {
   width: 31%;
 
+  @media screen and (max-width: $break-tablet) {
+    width: 48%;    
+  }
+
+  @media screen and (max-width: $break-mobile) {
+    width: 100%;
+  }
   blockquote {
     margin: 1.8em .8em;
     padding: 0.1em 1em;

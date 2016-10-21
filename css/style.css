@@ -259,6 +259,12 @@ nav {
 
 .post {
   width: 31%; }
+  @media screen and (max-width: 960px) {
+    .post {
+      width: 48%; } }
+  @media screen and (max-width: 640px) {
+    .post {
+      width: 100%; } }
   .post blockquote {
     border-left: 2px solid #666;
     color: #666;
