@@ -76,6 +76,27 @@ kramdown:
 
 markdown: redcarpet
 
+picture:
+  source: assets/images/_fullsize
+  output: generated
+  markup: picture
+  presets:
+    # Full width pictures
+    default:
+      ppi: [1, 1.5]
+      attr:
+        class: post-full
+        itemprop: image
+      source_lrg:
+        media: "(min-width: 40em)"
+        width: 700
+      source_med:
+        media: "(min-width: 30em)"
+        width: 450
+      source_default:
+        width: 350
+        height: 200
+
 # Set the Sass partials directory, as we're using @imports
 # sass:
 #   style: :expanded # You might prefer to minify using :compressed
